@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+ @import "bootstrap/dist/css/bootstrap.min.css";
+ body {
+    // font-family: 'Roboto', sans-serif; /* Default font set to Roboto */
+    font-family: Arial, sans-serif;
+    color: #e6e6e6;
+    background-color: rgba(255, 255, 255, 0.0); /* White with 50% opacity */
+    background-size: auto;
+    scroll-behavior: smooth;
+  }

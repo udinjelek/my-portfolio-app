@@ -1,0 +1,52 @@
+.linear-background01{
+    background: linear-gradient(to bottom right, #102a44 , #15395b );
+}
+
+.color-text-second{
+    color: #54637c;
+    // color:red;
+}
+
+.header-web{
+    top: 0; 
+    height: 100vh; 
+    width: 50%; 
+    padding-top: 40px ;
+}
+
+.main-web{
+    width: 50%;
+    padding-top: 40px ;
+}
+
+.sticky-nav {
+    // position: fixed;
+    // top: 0;
+    width: 100%;
+    // z-index: 1000; /* Ensure it stays on top of other content */
+    // background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .sticky-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .sticky-nav a {
+    text-decoration: none;
+    color: blue;
+    padding: 5px 10px;
+  }
+  
+  .sticky-nav a.active {
+    color: red;
+  }
+
+  .project{
+    padding-bottom: 120px ;
+  }

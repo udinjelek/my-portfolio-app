@@ -11,7 +11,7 @@ const routes: Routes = [
         component:MainPageComponent,
         data:{title:'Home'}, 
     }
-];
+]; 
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

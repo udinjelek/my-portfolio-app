@@ -1,5 +1,5 @@
 import { Component , OnInit , HostListener} from '@angular/core';
-
+import { ImagePreloaderService } from '../services/image-preloader.service';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -41,6 +41,27 @@ export class MainPageComponent implements OnInit {
                    
   ];
   isPhoneMode = false;
+
+  constructor(private imagePreloader: ImagePreloaderService) {
+    const imageUrls = [ 'assets/pic/mockup_ncare01.jpg', 
+                        'assets/pic/mockup_ncare02.jpg', 
+                        'assets/pic/mockup_ncare03.jpg', 
+                        'assets/pic/mockup_ncare04.jpg', 
+                        'assets/pic/mockup_botpy01.jpg',
+                        'assets/pic/mockup_botpy02.jpg',
+                        'assets/pic/mockup_botpy03.jpg',
+                        'assets/pic/mockup_botpy04.jpg',
+                        'assets/pic/mockup_botpy05.jpg',
+                        'assets/pic/mockup_card01.jpg',
+                        'assets/pic/mockup_card02.jpg',
+                        'assets/pic/mockup_game01.jpg',
+                        'assets/pic/mockup_game02.jpg',
+                        'assets/pic/mockup_game03.jpg',
+                        'assets/pic/mockup_game04.jpg'
+                        ];
+    this.imagePreloader.preloadImages(imageUrls);
+    
+  }
   ngOnInit() {
     this.updateIsPhoneMode();
   }

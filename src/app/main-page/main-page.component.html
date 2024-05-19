@@ -9,20 +9,34 @@
                     <h5>Fullstack Engineer</h5>
                     <h1>Rizaq Gani P</h1>
                     <h5 class="color-text-second">Every line of code is a step in solving a puzzle that only you can see</h5>
-
+                    <div class="img-container">
+                        <div class="position-relative h-100" *ngIf="currentPhotoUrl">
+                          <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y" (click)="previousImage()">
+                            &#10094; <!-- Left arrow icon -->
+                          </button>
+                          <img src="{{ currentPhotoUrl }}" class="img-fluid w-100 h-100" alt="Image description">
+                          <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y" (click)="nextImage()">
+                            &#10095; <!-- Right arrow icon -->
+                          </button>
+                        </div>
+                    </div>
+                    <div style="height: 30px;">
+                        <span>{{currentPhotoDescription}}</span>
+                    </div>
                     <nav class="sticky-nav">
                         <ul>
-                          <li><a href="#about">About Me</a></li>
-                          <li><a href="#abc">Project 1</a></li>
-                          <li><a href="#def">Project 2</a></li>
-                          <li><a href="#ghi">Project 3</a></li>
+                          <li><a ngxPageScroll href="#about" (click)="updateActiveSelection('about')">About</a></li>
+                          <li><a ngxPageScroll href="#project1" (click)="updateActiveSelection('project1')">P1</a></li>
+                          <li><a ngxPageScroll href="#project2" (click)="updateActiveSelection('project2')">P2</a></li>
+                          <li><a ngxPageScroll href="#project3" (click)="updateActiveSelection('project3')">P3</a></li>
+                          <li><a ngxPageScroll href="#project4" (click)="updateActiveSelection('project4')">P4</a></li>
                         </ul>
                     </nav>
                 </div>
             </header>
 
             <main class="pt-6 pt-lg-24 d-flex flex-column justify-content-between main-web">
-                <section id="about" >
+                <section id="about" class="project" (mouseover)="updateActiveOnHover('about')">
                     <h2>About Me</h2>
                     <p>In 2010, I started my career in the telecommunications industry as a 'Tools Maker,' creating programs to collect data, generate reports, and develop automation tools. 
                     In 2022, I transitioned to a full-stack developer role at different Company, where I build dynamic websites to support the HR team.
@@ -38,7 +52,7 @@
                     
                 </section>
                 
-                <section id="abc" class="project">
+                <section id="project1" class="project" (mouseover)="updateActiveOnHover('project1')">
                     <h2>Personal Project</h2>
                     <div>
                         
@@ -53,31 +67,44 @@
                             SQLite serves as the database, ensuring efficient data management for fast and versatile customer support.</p>
                     </div>
                 </section>
-                <section id="def" class="project">
+                <section id="project2" class="project" (mouseover)="updateActiveOnHover('project2')">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        <h4>Telegram File Converter Bot</h4>
+                        <p>The Telegram File Converter Bot is a practical tool I developed to simplify the conversion of HTML data tables into readable CSV files. 
+                            Designed for ease of use, this bot operates within Telegram to prevent the need for additional software installation. 
+                            It supports seamless data handling, making it perfect for database imports and Excel tasks like VLOOKUP. </p>
+                        <p>Powered by Python, the bot ensures efficient and accurate data conversion while keeping track of user interactions.</p>
+                    </div>
+                </section>
+                <section id="project3" class="project" (mouseover)="updateActiveOnHover('project3')">
                     <div>
                         
                     </div>
                     <div>
                         <h4>Greeting Cards App</h4>
-                        <p>asasa asasa  asasasa assss asasas asas </p>
+                        <p>The Greeting Cards App is a creative solution I developed to make sending holiday messages more enjoyable and personalized. 
+                            Instead of plain text messages, this app allows me to choose from various templates tailored that I made before for different recipients, whether it's my boss, colleagues, friends, or family. 
+                            Each template can be customized with the recipient's name through a simple URL modification, ensuring a personal touch while keeping the process quick and easy.</p>
+                        <p>All the artwork is vector-based and created by me with Inkscape. The programming is done using Angular with TypeScript.</p>
                     </div>
                 </section>
-                <section id="ghi" class="project" >
-                    <div>
-                        
-                    </div>
-                    <div>
-                        <h4>Bot Telegram File Converter</h4>
-                        <p>asasa asasa  asasasa assss asasas asas </p>
-                    </div>
-                </section>
-                <section id="jkl" class="project" >
+                <section id="project4" class="project" (mouseover)="updateActiveOnHover('project4')" >
                     <div>
                         
                     </div>
                     <div>
                         <h4>Puzzle Connection Game</h4>
-                        <p>asasa asasa  asasasa assss asasas asas </p>
+                        <p> Sometimes I need to hone my programming skills and satisfy my desire to solve logic challenges. 
+                            That's why I created Game. 
+                            Making games often requires complex logic, involving various algorithms and mathematical calculations that are rarely encountered in full-stack development. 
+                            This game serves as a fun and engaging way to improve those skills.</p>
+                        <p>The Game features a captivating narrative with character dialogues that lead to a choice-driven ending.</p>
+                        <p>Inspired by Onet, The game throws in some twists and additional mechanics that demand strategic thinking to solve the puzzles.</p>
+                        <p>The drawings are raster-based,  created entirely by me in Krita, add a unique visual style.
+                            The game engine used is Godot, with GDScript as the language of choice.</p>
                     </div>
                 </section>
                 

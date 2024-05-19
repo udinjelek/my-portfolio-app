@@ -1,5 +1,6 @@
 .linear-background01{
-    background: linear-gradient(to bottom right, #102a44 , #15395b );
+    // background: linear-gradient(to bottom right, #102a44 , #15395b );
+    background: linear-gradient(to bottom right, #050b10 , #15395b );
 }
 
 .color-text-second{
@@ -48,5 +49,21 @@
   }
 
   .project{
-    padding-bottom: 120px ;
+    padding-top: 20px ;
+    padding-bottom: 60px ;
   }
+
+  .img-container {
+    margin-top: 30px;
+    height: 300px;
+  
+    .position-relative {
+      height: 100%;
+    }
+  
+    img {
+      object-fit: cover; /* This ensures the image covers the entire container */
+    }
+  
+  }
+  

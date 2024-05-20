@@ -9,8 +9,15 @@ export class MainPageComponent implements OnInit {
   activeSelection:string = 'about';
   currentPhotoType:string = 'about';
   currentPhotoDataId:number = 0;
+  currentPhotoDataId_link:number[] = [0,0,0,0,0];
   currentPhotoUrl:string = '';
+  currentPhotoUrl_link:string[] = ['assets/pic/mockup_ncare01.jpg'
+                                  ,'assets/pic/mockup_botpy01.jpg'
+                                  ,'assets/pic/mockup_card01.jpg'
+                                  ,'assets/pic/mockup_game01.jpg'
+                                  ,''];
   currentPhotoDescription:string = '';
+  currentPhotoDescription_link:string[] = ['nCare Chat App','Telegram Bot Message','Greeting Card Preview','Game Title Screen',''];
   photoData:any[]=[ { type:'project1',
                       data: [ {url:'assets/pic/mockup_ncare01.jpg',description:'nCare Chat App'},
                               {url:'assets/pic/mockup_ncare02.jpg',description:'nCare Chat Website Form Login'},
@@ -64,6 +71,9 @@ export class MainPageComponent implements OnInit {
   }
   ngOnInit() {
     this.updateIsPhoneMode();
+    console.log('link_0')
+    console.log(this.currentPhotoUrl_link[0])
+    
   }
 
   @HostListener('window:resize')
@@ -90,6 +100,17 @@ export class MainPageComponent implements OnInit {
     this.update_url_description_photo();
   }
   
+  previousImage_link(noLink:number){
+    const maxId = this.getLengthIndex_currentPhotoDataId_link(noLink)
+    if (this.currentPhotoDataId_link[noLink] <= 0)
+    { this.currentPhotoDataId_link[noLink] = maxId - 1
+    }
+    else
+    { this.currentPhotoDataId_link[noLink] -= 1;
+    }
+    this.update_url_description_photo_link(noLink);
+  }
+
   nextImage(){
     const maxId = this.getLengthIndex_currentPhotoDataId()
     if (this.currentPhotoDataId >= maxId - 1)
@@ -99,6 +120,17 @@ export class MainPageComponent implements OnInit {
     { this.currentPhotoDataId += 1;
     }
     this.update_url_description_photo();
+  }
+
+  nextImage_link(noLink:number){
+    const maxId = this.getLengthIndex_currentPhotoDataId_link(noLink)
+    if (this.currentPhotoDataId_link[noLink] >= maxId - 1)
+    { this.currentPhotoDataId_link[noLink] = 0
+    }
+    else
+    { this.currentPhotoDataId_link[noLink] += 1;
+    }
+    this.update_url_description_photo_link(noLink);
   }
 
   updateActiveSelection(updated:string){
@@ -142,9 +174,25 @@ export class MainPageComponent implements OnInit {
     }
   }
 
+  update_url_description_photo_link(noLink:number){
+    const projectNow = this.photoData[noLink];
+    if ( projectNow.data.length == 0 )
+    { this.currentPhotoUrl_link[noLink] = '';
+      this.currentPhotoDescription_link[noLink] = '';
+    }
+    else {
+      this.currentPhotoUrl_link[noLink] = projectNow.data[this.currentPhotoDataId_link[noLink]].url;
+      this.currentPhotoDescription_link[noLink] = projectNow.data[this.currentPhotoDataId_link[noLink]].description;
+    }
+  }
+
   getLengthIndex_currentPhotoDataId():number{
     const projectNow = this.photoData.find(project => project.type === this.currentPhotoType);
     return projectNow.data.length
   }
 
+  getLengthIndex_currentPhotoDataId_link(noLink:number):number{
+    const projectNow = this.photoData[noLink];
+    return projectNow.data.length;
+  }
 }

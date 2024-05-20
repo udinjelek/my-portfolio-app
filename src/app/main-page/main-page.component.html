@@ -6,7 +6,7 @@
             <header class="sticky-top d-flex flex-column justify-between py-6 py-lg-24 header-web">
                 <div class="container">
                     <!-- <p class="mb-1">Fullstack Engineer</p> -->
-                    <h5>Fullstack Engineer</h5>
+                    <h5>Fullstack Engineer &#x2022; <span class="color-text-second">Enthusiastic Programmer</span></h5>
                     <h1>Rizaq Gani P</h1>
                     <h5 class="color-text-second">Every line of code is a step in solving a puzzle that only you can see</h5>
                     <div class="img-container">
@@ -43,11 +43,26 @@
 
                     <nav class="sticky-nav">
                         <ul>
-                          <li><a ngxPageScroll href="#about"    class="nav-button" (click)="updateActiveSelection('about')">About</a></li>
-                          <li><a ngxPageScroll href="#project1" class="nav-button" (click)="updateActiveSelection('project1')">Project 01</a></li>
-                          <li><a ngxPageScroll href="#project2" class="nav-button" (click)="updateActiveSelection('project2')">Project 02</a></li>
-                          <li><a ngxPageScroll href="#project3" class="nav-button" (click)="updateActiveSelection('project3')">Project 03</a></li>
-                          <li><a ngxPageScroll href="#project4" class="nav-button" (click)="updateActiveSelection('project4')">Project 04</a></li>
+                          <li><a ngxPageScroll href="#about"    
+                                [ngClass]="{'nav-button':activeSelection!=='about' , 
+                                            'nav-button-active':activeSelection==='about'}"
+                                (click)="updateActiveSelection('about')">About</a></li>
+                          <li><a ngxPageScroll href="#project1" 
+                                [ngClass]="{'nav-button':activeSelection!=='project1' , 
+                                'nav-button-active':activeSelection==='project1'}"
+                                (click)="updateActiveSelection('project1')">Project 01</a></li>
+                          <li><a ngxPageScroll href="#project2" 
+                                [ngClass]="{'nav-button':activeSelection!=='project2' , 
+                                'nav-button-active':activeSelection==='project2'}"
+                                (click)="updateActiveSelection('project2')">Project 02</a></li>
+                          <li><a ngxPageScroll href="#project3" 
+                                [ngClass]="{'nav-button':activeSelection!=='project3' , 
+                                'nav-button-active':activeSelection==='project3'}"
+                                (click)="updateActiveSelection('project3')">Project 03</a></li>
+                          <li><a ngxPageScroll href="#project4" 
+                                [ngClass]="{'nav-button':activeSelection!=='project4' , 
+                                'nav-button-active':activeSelection==='project4'}"
+                                (click)="updateActiveSelection('project4')">Project 04</a></li>
                         </ul>
                     </nav>
                 </div>

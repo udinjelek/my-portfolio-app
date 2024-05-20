@@ -102,22 +102,24 @@ export class MainPageComponent implements OnInit {
   }
 
   updateActiveSelection(updated:string){
-    if (updated != 'about'){
+   
       if (this.activeSelection != updated)
         { this.activeSelection = updated
-          this.changingActiveSelection() 
+          if (updated != 'about'){
+              this.changingActiveSelection() 
+          }
         }
-    }
+    
     
   }
 
   updateActiveOnHover(updated:string){
-    if (updated != 'about'){
-      if (this.activeSelection != updated)
-        { this.activeSelection = updated
-          this.changingActiveSelection() 
+    if (this.activeSelection != updated)
+      { this.activeSelection = updated
+        if (updated != 'about'){
+            this.changingActiveSelection() 
         }
-    }
+      }
   }
 
   changingActiveSelection(){

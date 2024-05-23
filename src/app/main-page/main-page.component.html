@@ -69,6 +69,10 @@
                                 [ngClass]="{'nav-button':activeSelection!=='project4' , 
                                 'nav-button-active':activeSelection==='project4'}"
                                 (click)="updateActiveSelection('project4')">Project 04</a></li>
+                          <li><a ngxPageScroll href="#project5" 
+                                [ngClass]="{'nav-button':activeSelection!=='project5' , 
+                                'nav-button-active':activeSelection==='project5'}"
+                                (click)="updateActiveSelection('project5')">Project 05</a></li>
                         </ul>
                     </nav>
                     
@@ -197,6 +201,39 @@
                         <p>Inspired by Onet, The game throws in some twists and additional mechanics that demand strategic thinking to solve the puzzles.</p>
                         <p>The drawings are raster-based,  created entirely by me in Krita, add a unique visual style.
                             The game engine used is Godot, with GDScript as the language of choice.</p>
+                    </div>
+                </section>
+                <section id="project5" class="project" (mouseover)="updateActiveOnHover('project5')" >
+                    <div>
+                        
+                    </div>
+                    <div>
+                        <h4>Web Scraping with Selenium</h4>
+                        <div [ngClass]="{'d-none': !isPhoneMode ,
+                                        'img-container-mobile': isPhoneMode}">
+                            <div class="position-relative h-100">
+                            <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y" (click)="previousImage_link(4)">
+                                &#10094; <!-- Left arrow icon -->
+                            </button>
+                            <img src="{{ currentPhotoUrl_link[4] }}" class="img-fluid w-100 h-100" alt="Image description">
+                            <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y" (click)="nextImage_link(4)">
+                                &#10095; <!-- Right arrow icon -->
+                            </button>
+                            </div>
+                        </div>
+                        <div ngClass="height-desc text-end color-text-second" *ngIf=" isPhoneMode">
+                            <span>{{currentPhotoDescription_link[4]}}</span>
+                        </div>
+                        <p> Sometimes I need to monitor prices on e-commerce websites. 
+                            To make this process more efficient, I started developing Web Scraping with Selenium, 
+                            a tool that automates daily price checks.</p>
+                        <p> Currently, I have completed the web scraping part using Selenium. 
+                            This part captures data from multiple pages and saves it to a CSV file, 
+                            making it easier to keep track of price changes and new listings.</p>
+                        
+                        <p><a class="link" routerLink="/devlog-selenium">
+                            Learn more about my devlog on Web Scraping with Selenium
+                        </a></p>
                     </div>
                 </section>
                 

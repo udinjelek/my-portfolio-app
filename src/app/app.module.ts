@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { DevlogSeleniumComponent } from './devlog-selenium/devlog-selenium.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
+    DevlogSeleniumComponent,
   ],
   imports: [
     BrowserModule,

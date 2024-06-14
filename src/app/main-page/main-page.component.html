@@ -9,6 +9,11 @@
                 <div [ngClass]="{'container': !isPhoneMode,
                                 'p-0': isPhoneMode}">
                     <!-- <p class="mb-1">Fullstack Engineer</p> -->
+                    <ng-container *ngIf="isPhoneMode">
+                        <h1 >Portfolio</h1>
+                        <hr>
+                    </ng-container>
+                    
                     <h5>Fullstack Engineer &#x2022; <span class="color-text-second">Enthusiastic Programmer</span></h5>
                     <h1>Rizaq Gani P</h1>
                     <h5 class="color-text-second">Every line of code is a step in solving a puzzle that only you can see</h5>

@@ -15,7 +15,7 @@ export class MainPageComponent implements OnInit {
                                   ,'assets/pic/mockup_botpy01.jpg'
                                   ,'assets/pic/mockup_card01.jpg'
                                   ,'assets/pic/mockup_game01.jpg'
-                                  ,''];
+                                  ,'assets/pic/mockup_webscrap01.png'];
   currentPhotoDescription:string = '';
   currentPhotoDescription_link:string[] = ['nCare Chat App','Telegram Bot Message','Greeting Card Preview','Game Title Screen',''];
   photoData:any[]=[ { type:'project1',
@@ -45,6 +45,10 @@ export class MainPageComponent implements OnInit {
                               {url:'assets/pic/mockup_game04.jpg',description:'Game Puzzle Mode'},
                             ]
                     },
+                    { type:'project5',
+                      data: [ {url:'assets/pic/mockup_webscrap01.png',description:'Web Scraping'},
+                            ]
+                    },
                    
   ];
   isPhoneMode = false;
@@ -64,7 +68,8 @@ export class MainPageComponent implements OnInit {
                         'assets/pic/mockup_game01.jpg',
                         'assets/pic/mockup_game02.jpg',
                         'assets/pic/mockup_game03.jpg',
-                        'assets/pic/mockup_game04.jpg'
+                        'assets/pic/mockup_game04.jpg',
+                        'assets/pic/mockup_webscrap01.png'
                         ];
     this.imagePreloader.preloadImages(imageUrls);
     

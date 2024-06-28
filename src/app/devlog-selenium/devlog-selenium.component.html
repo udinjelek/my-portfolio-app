@@ -37,9 +37,9 @@
           <p>For now, we will focus on the first part of the project: web scraping using Selenium.</p>
           <p>Setting Up Selenium</p>
           <ol>
-            <li><strong>Install Selenium:</strong> Install the Selenium package using pip 
-              <pre>pip install selenium</pre>
-            </li>
+            <li><strong>Install Selenium:</strong> Install the Selenium package using pip </li>
+              <app-code-with-line-numbers [code]="codeSnippet_pipInstall"></app-code-with-line-numbers>
+            
 
             <li><strong>Download WebDriver:</strong> Download the appropriate WebDriver for your browser (e.g., ChromeDriver for Google Chrome).</li>
           </ol>
@@ -76,18 +76,15 @@
           <h3>Data Extraction Strategy</h3>
           <p>After learning about HTTP requests (queries) and inspecting the website, I determined the input format for the Tokopedia search query. The format looks like this:</p>
 
-          <pre><code>https://www.tokopedia.com/search?pmax=21000000&pmin=5000000&q=Lenovo%20LOQ%2015AHP9&page=1</code></pre>
+          <app-code-with-line-numbers [code]="codeSnippet_linkToko"></app-code-with-line-numbers>
+      
 
           <p>In this example, `q` represents the search keyword, `pmax` is the maximum price, and `pmin` is the minimum price.  `page` indicates the current page of search results.</p>
 
           <p>For the output data, I used browser developer tools to inspect the elements and identify the class names used to display the desired information (product name, price, shop name, etc.).</p>
 
-          <div class="container-code">
-            <pre><code>
-              {{pythoncode}}
-            </code></pre>
-          </div>
-
+          <app-code-with-line-numbers [code]="codeSnippet_pythoncode"></app-code-with-line-numbers>
+          <br>
           <p>**Note:** Web scraping can be against the terms of service for some websites. Make sure you understand and respect Tokopedia's terms before proceeding.</p>
           
           <p>When you run the Python script, it will automatically open a Chrome browser window. This ensures that all items on the target webpage are loaded before scraping begins. After a short delay to allow for loading, the Chrome window will close.</p>
@@ -96,11 +93,8 @@
 
           <h3>Sample Data</h3>
 
-          <pre>
-          'search_key' : 'Lenovo LOQ 15AHP9',
-          'min_price' : 5000000,
-          'max_price' : 21000000
-          </pre>
+          <app-code-with-line-numbers [code]="codeSnippet_searchkey"></app-code-with-line-numbers>
+  
 
           <p>As of May 23, 2024, this script is expected to generate approximately 164 data, split across two webpages: 85 items on the first page and 79 items on the second page.</p>
           <h1></h1>

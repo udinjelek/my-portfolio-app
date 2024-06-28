@@ -11,8 +11,19 @@ ngOnInit(): void {
     window.scrollTo(0, 0);
 }
 
+codeSnippet_searchkey = `
+'search_key' : 'Lenovo LOQ 15AHP9',
+'min_price' : 5000000,
+'max_price' : 21000000
+`;
 
-pythoncode = `
+codeSnippet_pipInstall = `pip install selenium
+`;
+
+codeSnippet_linkToko = `https://www.tokopedia.com/search?pmax=21000000&pmin=5000000&q=Lenovo%20LOQ%2015AHP9&page=1
+`;
+
+codeSnippet_pythoncode = `
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service

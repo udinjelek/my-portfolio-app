@@ -1,0 +1,12 @@
+<!-- src/app/code-with-line-numbers/code-with-line-numbers.component.html -->
+<div class="code-container">
+    <pre class="line-numbers">
+      <code class="line-number-text">
+        {{ lineNumbers }}
+      </code>
+    </pre>
+    <pre class="code-snippet">
+      <code [innerHTML]="highlightedCode"></code>
+    </pre>
+  </div>
+  
